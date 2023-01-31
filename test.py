@@ -1,22 +1,19 @@
-#try:
-import json
-import boto3
-from selenium.webdriver import Chrome
-from selenium.webdriver.chrome.options import Options
-import os
-import shutil
-import uuid
-import time
-from datetime import datetime
-import datet
-print("All Modules are ok ...")
+try:
+    import json
+    from selenium.webdriver import Chrome
+    from selenium.webdriver.chrome.options import Options
+    import os
+    import shutil
+    import uuid
+    import boto3
+    from datetime import datetime
+    import datetime
 
-timestr = time.strftime("%Y%m%d-%H%M%S")
-s3 = boto3.client('s3')
+    print("All Modules are ok ...")
 
-#except Exception as e:
+except Exception as e:
 
-#    print("Error in Imports ")
+    print("Error in Imports ")
 
 
 
@@ -36,7 +33,13 @@ class WebDriver(object):
     def get(self):
         driver = Chrome('/opt/chromedriver', options=self.options)
         return driver
-    
-        instance_ = WebDriver()
-        print("Printing instance value :" + instance_)
-        return "Testing"
+
+
+def my_function(event, context):
+
+    instance_ = WebDriver()
+    driver = instance_.get()
+    driver.get("https://github.com")
+    print(driver.page_source)
+    return True
+my_function(event, context)
