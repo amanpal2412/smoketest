@@ -1,23 +1,22 @@
-try:
-    import json
-    import boto3
-    from selenium.webdriver import Chrome
-    from selenium.webdriver.chrome.options import Options
-    import os
-    import shutil
-    import uuid
-    import time
-    from datetime import datetime
-    import datetime
+#try:
+import json
+import boto3
+from selenium.webdriver import Chrome
+from selenium.webdriver.chrome.options import Options
+import os
+import shutil
+import uuid
+import time
+from datetime import datetime
+import datet
+print("All Modules are ok ...")
 
-    print("All Modules are ok ...")
-    
-    timestr = time.strftime("%Y%m%d-%H%M%S")
-    s3 = boto3.client('s3')
+timestr = time.strftime("%Y%m%d-%H%M%S")
+s3 = boto3.client('s3')
 
-except Exception as e:
+#except Exception as e:
 
-    print("Error in Imports ")
+#    print("Error in Imports ")
 
 
 
@@ -40,7 +39,7 @@ class WebDriver(object):
 
 
 
-main():
+if __name__ == "__main__":
 
     instance_ = WebDriver()
     driver = instance_.get()
