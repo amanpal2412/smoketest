@@ -40,7 +40,7 @@ class WebDriver(object):
 
 
 
-def lambda_handler(event, context):
+main():
 
     instance_ = WebDriver()
     driver = instance_.get()
