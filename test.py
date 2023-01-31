@@ -34,11 +34,11 @@ class WebDriver(object):
         driver = Chrome('/opt/chromedriver', options=self.options)
         return driver
 
-my_function(event, context)
-def my_function(event, context):
+def my_function():
 
     instance_ = WebDriver()
     driver = instance_.get()
     driver.get("https://github.com")
     print(driver.page_source)
     return True
+my_function()
