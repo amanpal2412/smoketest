@@ -35,7 +35,6 @@ class WebDriver(object):
         return driver
 
 def my_function():
-
     instance_ = WebDriver()
     driver = instance_.get()
     driver.get("https://github.com")
