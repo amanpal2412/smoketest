@@ -36,12 +36,10 @@ class WebDriver(object):
     def get(self):
         driver = Chrome('/opt/chromedriver', options=self.options)
         return driver
-
     
-    
-    instance_ = WebDriver()
-    print("Printing instance value :" + instance_)
-    return "Testing"
+        instance_ = WebDriver()
+        print("Printing instance value :" + instance_)
+        return "Testing"
 #driver = instance_.get()
 #driver.get("https://www.youtube.com")
 #time.sleep(5)
