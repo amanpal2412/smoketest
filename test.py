@@ -34,7 +34,7 @@ class WebDriver(object):
         driver = Chrome('/opt/chromedriver', options=self.options)
         return driver
 
-
+my_function(event, context)
 def my_function(event, context):
 
     instance_ = WebDriver()
@@ -42,4 +42,3 @@ def my_function(event, context):
     driver.get("https://github.com")
     print(driver.page_source)
     return True
-my_function(event, context)
