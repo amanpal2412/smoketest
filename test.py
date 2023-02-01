@@ -14,7 +14,7 @@ try:
     import selenium
     from selenium import webdriver
     from selenium.webdriver import Chrome
-    from selenium.webdriver.Chrome.options import Options
+    from selenium.webdriver import chrome.options.Options
 
     print("All Modules are ok ...")
 
@@ -30,7 +30,7 @@ except Exception as e:
 class WebDriver(object):
 
     def __init__(self):
-        self.options = Options()
+        self.options = chrome.options.Options()
 
         self.options.binary_location = '/opt/headless-chromium'
         self.options.add_argument('--headless')
