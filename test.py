@@ -1,17 +1,19 @@
 try:
     import json
+    import boto3
     from selenium.webdriver import Chrome
     from selenium.webdriver.chrome.options import Options
-    import selenium
-    from selenium import webdriver
     import os
     import shutil
     import uuid
-    import boto3
+    import time
     from datetime import datetime
     import datetime
 
     print("All Modules are ok ...")
+
+    timestr = time.strftime("%Y%m%d-%H%M%S")
+    s3 = boto3.client('s3')
 
 except Exception as e:
 
@@ -36,10 +38,15 @@ class WebDriver(object):
         driver = Chrome('/opt/chromedriver', options=self.options)
         return driver
 
-def my_function():
+
+
+def lambda_handler(event, context):
+
     instance_ = WebDriver()
     driver = instance_.get()
-    driver.get("https://github.com")
+    driver.get("https://www.youtube.com")
+    time.sleep(5)
+    driver.save_screenshot("/tmp/image.png")
+    s3.upload_file('/tmp/image.png', 'testseleniumchromedriver', 'image.png_'+timestr)
     print(driver.page_source)
     return True
-my_function()
