@@ -11,8 +11,8 @@ try:
     import datetime
     import sys
     sys.path.append('/out/build/chrome_headless/python/lib/python3.7/site-packages')
-    #import selenium
-    #from selenium import webdriver
+    import selenium
+    from selenium import webdriver
     from selenium.webdriver import Chrome
     from selenium.webdriver.chrome.options import Options
 
