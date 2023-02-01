@@ -40,13 +40,11 @@ class WebDriver(object):
 
 
 
-def lambda_handler(event, context):
-
-    instance_ = WebDriver()
-    driver = instance_.get()
-    driver.get("https://www.youtube.com")
-    time.sleep(5)
-    driver.save_screenshot("/tmp/image.png")
-    s3.upload_file('/tmp/image.png', 'testseleniumchromedriver', 'image.png_'+timestr)
-    print(driver.page_source)
-    return True
+instance_ = WebDriver()
+driver = instance_.get()
+driver.get("https://www.youtube.com")
+time.sleep(5)
+driver.save_screenshot("/tmp/image.png")
+s3.upload_file('/tmp/image.png', 'testseleniumchromedriver', 'image.png_'+timestr)
+print(driver.page_source)
+return True
