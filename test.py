@@ -14,7 +14,7 @@ try:
     import selenium
     from selenium import webdriver
     from selenium.webdriver import Chrome
-    from selenium.webdriver.chrome.options import Options
+    from selenium.webdriver.Chrome.options import Options
 
     print("All Modules are ok ...")
 
