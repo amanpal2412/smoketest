@@ -1,14 +1,18 @@
 try:
     import json
     import boto3
-    from selenium.webdriver import Chrome
-    from selenium.webdriver.chrome.options import Options
+    #from selenium.webdriver import Chrome
+    #from selenium.webdriver.chrome.options import Options
     import os
     import shutil
     import uuid
     import time
     from datetime import datetime
     import datetime
+    import sys
+    sys.path.append('/opt')
+    from selenium.webdriver import Chrome
+    from selenium.webdriver.chrome.options import Options
 
     print("All Modules are ok ...")
 
