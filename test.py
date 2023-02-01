@@ -54,4 +54,4 @@ if __name__ == "__main__":
     driver.save_screenshot("/tmp/image.png")
     s3.upload_file('/tmp/image.png', 'testseleniumchromedriver', 'image.png_'+timestr)
     print(driver.page_source)
-    return True
+    #return True
