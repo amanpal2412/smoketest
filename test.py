@@ -2,6 +2,8 @@ try:
     import json
     from selenium.webdriver import Chrome
     from selenium.webdriver.chrome.options import Options
+    import selenium
+    from selenium import webdriver
     import os
     import shutil
     import uuid
