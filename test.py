@@ -42,6 +42,6 @@ def lambda_handler(event, context):
     driver.get("https://www.youtube.com")
     time.sleep(5)
     driver.save_screenshot("/tmp/image.png")
-    s3.upload_file('/tmp/image.png', 'testseleniumchromedriver', 'image.png_'+timestr)
+    s3.upload_file('/tmp/image.png', 'testseleniumchromedriver', 'image'+timestr+'.png')
     print(driver.page_source)
     return True
