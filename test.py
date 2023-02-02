@@ -1,4 +1,4 @@
-print("This is run no 4")
+print("This is run no 5")
 import os
 
 # Add path to shared libraries
@@ -7,6 +7,7 @@ os.environ['PYTHONPATH'] = '/opt'
 
 import json
 #import boto3
+import selenium
 from selenium import webdriver 
 from selenium.webdriver.chrome.options import Options
 import os
