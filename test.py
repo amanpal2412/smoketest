@@ -17,6 +17,7 @@ except Exception as e:
 
     print("Error in Imports ")
 
+print("This is run no 1")
 timestr = time.strftime("%Y%m%d-%H%M%S")
 s3 = boto3.client('s3')
 
