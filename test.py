@@ -1,3 +1,10 @@
+print("This is run no 3")
+import os
+
+# Add path to shared libraries
+os.environ['LD_LIBRARY_PATH'] = '/opt'
+os.environ['PYTHONPATH'] = '/opt'
+
 import json
 import boto3
 from selenium import webdriver 
@@ -9,7 +16,6 @@ import time
 from datetime import datetime
 import datetime
 
-print("This is run no 2")
 timestr = time.strftime("%Y%m%d-%H%M%S")
 s3 = boto3.client('s3')
 
