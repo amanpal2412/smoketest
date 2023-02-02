@@ -1,23 +1,15 @@
-try:
-    import json
-    import boto3
-    from selenium import webdriver 
-    from selenium.webdriver.chrome.options import Options
-    import os
-    import shutil
-    import uuid
-    import time
-    from datetime import datetime
-    import datetime
+import json
+import boto3
+from selenium import webdriver 
+from selenium.webdriver.chrome.options import Options
+import os
+import shutil
+import uuid
+import time
+from datetime import datetime
+import datetime
 
-
-    print("All Modules are ok ...")
-
-except Exception as e:
-
-    print("Error in Imports ")
-
-print("This is run no 1")
+print("This is run no 2")
 timestr = time.strftime("%Y%m%d-%H%M%S")
 s3 = boto3.client('s3')
 
