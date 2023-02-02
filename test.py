@@ -1,4 +1,4 @@
-print("This is run no 3")
+print("This is run no 4")
 import os
 
 # Add path to shared libraries
@@ -6,7 +6,7 @@ os.environ['LD_LIBRARY_PATH'] = '/opt'
 os.environ['PYTHONPATH'] = '/opt'
 
 import json
-import boto3
+#import boto3
 from selenium import webdriver 
 from selenium.webdriver.chrome.options import Options
 import os
@@ -17,7 +17,7 @@ from datetime import datetime
 import datetime
 
 timestr = time.strftime("%Y%m%d-%H%M%S")
-s3 = boto3.client('s3')
+#s3 = boto3.client('s3')
 
 class WebDriver(object):
 
@@ -44,6 +44,6 @@ if __name__ == "__main__":
     driver.get("https://www.youtube.com")
     time.sleep(5)
     driver.save_screenshot("/tmp/image.png")
-    s3.upload_file('/tmp/image.png', 'testseleniumchromedriver', 'image.png_'+timestr)
+    #s3.upload_file('/tmp/image.png', 'testseleniumchromedriver', 'image.png_'+timestr)
     print(driver.page_source)
     #return True
