@@ -1,7 +1,7 @@
 try:
     import json
     import boto3
-    from selenium.webdriver import Chrome
+    from selenium import webdriver 
     from selenium.webdriver.chrome.options import Options
     import os
     import shutil
@@ -9,24 +9,16 @@ try:
     import time
     from datetime import datetime
     import datetime
-    #import sys
-    #sys.path.append('/opt')
-    #import selenium
-    #from selenium.webdriver.chrome.options import Options
-    #from selenium import webdriver
-    #from selenium.webdriver import Chrome
 
 
     print("All Modules are ok ...")
-
-    timestr = time.strftime("%Y%m%d-%H%M%S")
-    s3 = boto3.client('s3')
 
 except Exception as e:
 
     print("Error in Imports ")
 
-
+timestr = time.strftime("%Y%m%d-%H%M%S")
+s3 = boto3.client('s3')
 
 class WebDriver(object):
 
@@ -42,7 +34,7 @@ class WebDriver(object):
         self.options.add_argument('--disable-dev-shm-usage')
 
     def get(self):
-        driver = Chrome('/opt/chromedriver', options=self.options)
+        driver = webdriver.Chrome('/opt/chromedriver', options=self.options)
         return driver
 
 
