@@ -43,7 +43,6 @@ def lambda_handler(event, context):
     time.sleep(5)
     driver.save_screenshot("/tmp/image.png")
     obj_name = "image" + timestr + ".png"
-    print(obj_name)
-    s3.upload_file('/tmp/image.png', 'testseleniumchromedriver', 'image'+$(date +%Y-%m-%d_%H-%M-%S)+'.png')
+    s3.upload_file('/tmp/image.png', 'testseleniumchromedriver', 'image'+obj_name+'.png')
     print(driver.page_source)
     return True
