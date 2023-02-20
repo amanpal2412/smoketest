@@ -1,7 +1,4 @@
 import os
-# Add path to shared libraries
-#os.environ['LD_LIBRARY_PATH'] = '/opt'
-#os.environ['PYTHONPATH'] = '/opt'
 import json
 import boto3
 import selenium
