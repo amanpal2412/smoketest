@@ -28,7 +28,7 @@ def run_test():
     capabilities.update(chrome_options.to_capabilities())
 
     driver = RemoteWebDriver(
-        command_executor=remote_url,
+        command_executor=remote_url["url"],
         desired_capabilities=capabilities)
 
     driver.get("https://www.youtube.com")
