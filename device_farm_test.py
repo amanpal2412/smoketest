@@ -9,6 +9,14 @@ import time
 timestr = time.strftime("%Y%m%d-%H%M%S")
 s3 = boto3.client('s3')
 
+PROJECT_ARN = "arn:aws:devicefarm:us-west-2:482218046771:testgrid-project:0d0a9d1b-c4b0-4393-a4c1-e07e25686ceb"
+
+devicefarm = boto3.client('devicefarm', region_name='us-west-2')
+remote_url = devicefarm.create_test_grid_url(
+    projectArn=PROJECT_ARN,
+    expiresInSeconds=300 # 5 minutes. Increase to longer if needed
+)
+
 def run_test():
     chrome_options = Options()
     chrome_options.add_argument("--headless")
@@ -20,7 +28,7 @@ def run_test():
     capabilities.update(chrome_options.to_capabilities())
 
     driver = RemoteWebDriver(
-        command_executor='http://127.0.0.1:4444/wd/hub',
+        command_executor=remote_url,
         desired_capabilities=capabilities)
 
     driver.get("https://www.youtube.com")
@@ -30,6 +38,6 @@ def run_test():
     print(driver.page_source)
     driver.quit()
 
-def lambda_handler(event, context):
+def main():
     run_test()
     return True
