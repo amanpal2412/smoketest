@@ -22,8 +22,8 @@ try:
     driver.get("https://www.youtube.com")
     time.sleep(5)
     driver.save_screenshot("/tmp/image.png")
-    s3.upload_file('/tmp/image.png', 'testseleniumchromedriver', 'image.png')
-    print(driver.page_source)
+    object_key = 'image-' + timestr + '.png'
+    s3.upload_file('/tmp/image.png', 'testseleniumchromedriver', object_key)
 except Exception as e:
     print(e)
 finally:
