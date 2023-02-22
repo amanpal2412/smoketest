@@ -1,9 +1,10 @@
 import os
 import json
 import boto3
+from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver import RemoteWebDriver
+#from selenium.webdriver import RemoteWebDriver
 import time
 
 timestr = time.strftime("%Y%m%d-%H%M%S")
@@ -27,7 +28,7 @@ def run_test():
     capabilities = DesiredCapabilities.CHROME.copy()
     capabilities.update(chrome_options.to_capabilities())
 
-    driver = RemoteWebDriver(
+    driver = webdriver.Remote(
         command_executor=remote_url["url"],
         desired_capabilities=capabilities)
 
