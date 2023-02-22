@@ -3,7 +3,7 @@ import json
 import boto3
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.remote.webdriver import RemoteWebDriver
+from selenium.webdriver import RemoteWebDriver
 import time
 
 timestr = time.strftime("%Y%m%d-%H%M%S")
