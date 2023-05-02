@@ -8,7 +8,7 @@ if len(sys.argv) < 2:
 script_name = sys.argv[1]
 
 try:
-    subprocess.run(['python', script_name], check=True)
+    subprocess.run(['python3', script_name], check=True)
 except subprocess.CalledProcessError as e:
     print(f'Error: {e}')
     sys.exit(1)
