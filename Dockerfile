@@ -9,7 +9,6 @@ RUN pip install --upgrade pip && \
     pip install boto3 selenium
 
 WORKDIR /app
-COPY cat /app
-COPY cat.py /app
+COPY cat.py device_farm_test.py /app/
 
-CMD [ "python3", "cat.py" ]
+ENTRYPOINT [ "python3", "cat.py" ]
