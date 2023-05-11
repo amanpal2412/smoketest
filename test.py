@@ -12,7 +12,7 @@ from datetime import datetime
 import datetime
 
 timestr = time.strftime("%Y%m%d-%H%M%S")
-s3 = boto3.client('s3')
+#s3 = boto3.client('s3')
 
 class WebDriver(object):
 
@@ -32,7 +32,7 @@ class WebDriver(object):
         return driver
 
 
-def lambda_handler(event, context):
+def main():
     
     instance_ = WebDriver()
     driver = instance_.get()
@@ -40,6 +40,9 @@ def lambda_handler(event, context):
     time.sleep(5)
     driver.save_screenshot("/tmp/image.png")
     #obj_name = "image" + timestr + ".png"
-    s3.upload_file('/tmp/image.png', 'testseleniumchromedriver', 'image.png')
+    #s3.upload_file('/tmp/image.png', 'testseleniumchromedriver', 'image.png')
     print(driver.page_source)
     return True
+
+if __name__ == "__main__":
+    main()
