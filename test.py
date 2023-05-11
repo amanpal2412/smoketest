@@ -19,7 +19,7 @@ class WebDriver(object):
     def __init__(self):
         self.options = Options()
 
-        self.options.binary_location = '/opt/headless-chromium'
+        self.options.binary_location = '/usr/bin/google-chrome'
         self.options.add_argument('--headless')
         self.options.add_argument('--no-sandbox')
         self.options.add_argument('--start-maximized')
